@@ -78,7 +78,16 @@ app.delete('/:id', async (request, response) => {
 	else
 		response.status(404).end();
 });
+
+// Serve static files from the "client" directory
+app.use(express.static(path.join(__dirname, 'client')));
+
+// Serve the React or client application's HTML file for all routes
+app.get('*', (_req, res) =>
+  res.sendFile(path.join(__dirname, 'client', 'index.html')
+));
+
 // App listens to the port specified above
 app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on port ${port}`);
 });
