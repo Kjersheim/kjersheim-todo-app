@@ -1,0 +1,121 @@
+/* Define custom CSS variables for color values */
+body {
+    --mint: #17b890ff;
+    --dark-green: #082d0fff;
+    --platinum: #dee5e5ff;
+    --cambridge-blue: #9dc5bbff;
+    --hookers-green: #5e807fff;
+   /* Set the background color for the body using the custom variable */
+    background-color: var(--mint);
+   /* Define font, text color, and basic styling for the body */
+    font-family: 'Arial', sans-serif;
+    color: var(--dark-green);
+    text-align: left;
+    padding: 0;
+    margin: 0;
+   /* Create a flex container to align content vertically */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+  /* Styling for the main application container */
+  #app-container {
+   /* Create a flex container with a vertical column layout */
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+   /* Set the background color using a custom variable and add styling for border and shadow */
+    background-color: var(--platinum);
+    border-radius: 3px;
+    padding: 15px;
+    margin: 20px;
+    border: 1px solid var(--hookers-green);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  /* Styling for the logo container */
+  .logo-container {
+    text-align: center;
+  }
+  /* Styling for the logo image */
+  #logo {
+    width: 100%;
+    max-width: 425px;
+    height: auto;
+  }
+  /* Styling for the input container */
+  .input-container {
+   /* Create a flex container with content alignment and spacing */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  /* Styling for input elements */
+  input[type="text"] {
+    border: 1px solid var(--hookers-green);
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 3px;
+    background-color: var(--platinum);
+  }
+  /* Styling for the "Add" button */
+  .add-button {
+    border: none;
+    padding: 10px 15px;
+    font-size: 15px;
+    cursor: pointer;
+   /* Define button background color and text color using custom variables */
+    background-color: var(--cambridge-blue);
+    color: var(--platinum);
+    border-radius: 3px;
+  }
+  /* Styling for the todo list container */
+  .todos-container {
+    list-style-type: square;
+    margin: 20px 0;
+    padding: 0;
+    overflow-y: auto;
+  }
+  /* Styling for unordered lists */
+  ul {
+    padding: 0;
+  }
+  /* Styling for elements with class "delete" */
+  .delete-todo {
+    font-size: 18px;
+    color: red;
+    border: none;
+    margin-right: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    line-height: 1;
+    display: inline-block;
+  }
+  /* Add styling for the "e" button */
+  .edit-todo {
+    font-size: 18px;
+    color: darkgreen;
+    border: none;
+    margin-right: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    line-height: 1;
+    display: inline-block;
+  }
+  /* Styling for the information container */
+  .info-container {
+    text-align: center;
+    color: var(--dark-green);
+    padding: 10px;
+    background-color: var(--hookers-green);
+    border-radius: 3px;
+    margin-top: 10px;
+   /* Initially, set the display to "none" to hide the info container */
+    display: none;
+  }
+  .separator {
+    border: none;
+    border-top: 1px solid #badcc3;
+  }
+  
