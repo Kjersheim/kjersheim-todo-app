@@ -9,7 +9,7 @@ function init() {
 }
 // Function to load todos from the server
 async function loadTodos() {
-	let response = await fetch('http://localhost:5001/todos');
+	let response = await fetch('/todos');
 	let todos = await response.json();
 	showTodos(todos);
 }
@@ -88,7 +88,7 @@ async function addTodo() {
 	const button = document.querySelector('button');
 	button.disabled = true;
 	// Disable the button while the request is in progress
-	const response = await fetch('http://localhost:5001/todos', {
+	const response = await fetch('/todos', {
 		method: 'POST',
 		// Send a POST request to add the new todo
 		headers: { 'Content-Type': 'application/json' },
@@ -117,7 +117,7 @@ async function addTodo() {
 }
 // Function to remove a todo
 async function removeTodo(id) {
-	const response = await fetch('http://localhost:5001/todos/' + id, { method: 'DELETE' });
+	const response = await fetch('/todos/' + id, { method: 'DELETE' });
 	let responseJson = await response.json();
 	let li = document.getElementById(id);
 	li.remove();
@@ -179,7 +179,7 @@ async function saveTask(id) {
 	const addButton = document.querySelector('.add-button');
 	addButton.disabled = true;
 	// Disable the button while the request is in progress
-	const response = await fetch(`http://localhost:5001/todos/${ id }`, {
+	const response = await fetch(`/todos/${ id }`, {
 		method: 'PUT',
 		// Send a PUT request to update the existing todo
 		headers: { 'Content-Type': 'application/json' },
