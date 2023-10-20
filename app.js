@@ -29,7 +29,7 @@ const todoSchema = new mongoose.Schema({
 // model
 const Todo = mongoose.model('Todo', todoSchema, 'todos');
 // ROUTES
-app.post('/todos', async (request, response) => {
+app.post('/', async (request, response) => {
 	const {text} = request.body;
 	if (!text) {
 		// Handle the case where the text is empty
@@ -46,18 +46,18 @@ app.post('/todos', async (request, response) => {
 	const savedTodo = await todo.save();
 	response.json(savedTodo);
 });
-app.get('/todos', async (request, response) => {
+app.get('/', async (request, response) => {
 	const todos = await Todo.find({});
 	response.json(todos);
 });
-app.get('/todos/:id', async (request, response) => {
+app.get('/:id', async (request, response) => {
 	const todo = await Todo.findById(request.params.id);
 	if (todo)
 		response.json(todo);
 	else
 		response.status(404).end();
 });
-app.put('/todos/:id', async (request, response) => {
+app.put('/:id', async (request, response) => {
 	const {id} = request.params;
 	const {text} = request.body;
 	if (!text) {
@@ -71,7 +71,7 @@ app.put('/todos/:id', async (request, response) => {
 		response.status(404).json({ error: 'Todo not found.' });
 	}
 });
-app.delete('/todos/:id', async (request, response) => {
+app.delete('/:id', async (request, response) => {
 	const deletedTodo = await Todo.findByIdAndRemove(request.params.id);
 	if (deletedTodo)
 		response.json(deletedTodo);
