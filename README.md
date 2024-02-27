@@ -1,2 +1,2 @@
 # kjersheim-todo-app
- FS exercise
+ FS exercisse to create a webapp with editable todo list items.
